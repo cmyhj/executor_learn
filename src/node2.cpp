@@ -15,7 +15,7 @@ Node2::Node2(const std::string& node_name) : Node(node_name)
 void Node2::timer_callback1()
 {
     RCLCPP_INFO(this->get_logger(), "timer callback1 MutuallyExclusive");
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    std::this_thread::sleep_for(std::chrono::milliseconds(200));
 }
 void Node2::timer_callback2()
 {

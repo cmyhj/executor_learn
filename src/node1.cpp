@@ -16,3 +16,6 @@ void Node1::timer_callback2()
     RCLCPP_INFO(this->get_logger(), "timer callback 2");
     std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 }
+
+//#include "rclcpp_components/register_node_macro.hpp"
+//RCLCPP_COMPONENTS_REGISTER_NODE(my_namespace::Node1)
