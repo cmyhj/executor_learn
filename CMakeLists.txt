@@ -7,6 +7,11 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+
+include_directories(
+        include
+)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -24,3 +29,13 @@ if(BUILD_TESTING)
 endif()
 
 ament_package()
+add_executable(executor_learn src/example.cpp)
+# add_executable(executor_learn src/executor_learn.cpp)
+
+target_link_libraries(executor_learn ${rclcpp_LIBRARIES})
+
+install(TARGETS
+        executor_learn
+        DESTINATION lib/${PROJECT_NAME})
+install(DIRECTORY config launch
+        DESTINATION share/${PROJECT_NAME})
